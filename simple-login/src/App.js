@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 
-import LoginForm from './components/common/Login';
+
+import Login from './components/common/Login';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
      
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <div className="login-wrapper">
-        <LoginForm/>
+        <Login/>
         </div>
     </div>
   );

@@ -1,56 +1,90 @@
-import React, { useState } from 'react'
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import React from 'react'
+import './login.css'
+import { useState } from 'react'
+
+const Login = () => {
+  const [login, setLogin] = useState({});
+
+  const handleChange = (event) => {
+    event.preventDefault();
+    setLogin({
+      ...login,
+      [event.target.name]: event.target.value
+    });
 
 
-const LoginForm = props => {
-    const [login, setLogin] = useState({});
+  }
 
-    const handleChange = (evt) => {
-        evt.preventDefault();
-        setLogin({
-            ...login,
-            [evt.target.name]: evt.target.value
-        })
-    }
-    console.log(login);
+  console.log(login);
   return (
-    <div className='login'>
+    <div id='login'>
+      <h3 className='text-center text-white pt-5'>Login form</h3>
       <div className='container'>
-        <div className='login-wrapper'>
-          <h1>Login here</h1>
-          <Form>
-            <FormGroup>
-                <div >
-              <Label for='exampleEmail'className="col-25">Email</Label>
-              <div className="col-75">
-              <Input
-                type='email'
-                name='email'
-                id='email'
-                placeholder='Enter Email'
-                onChange={handleChange}
-              /></div>
-              </div>
-            </FormGroup>
-            <FormGroup>
-              <Label for='examplePassword' className="col-25">Password</Label>
-              <div className="col-75">
-              <Input
-                type='password'
-                name='password'
-                id='password'
-                placeholder='Enter Password'
-                onChange={handleChange}
-              /></div>
-            </FormGroup>
-            
-<br/>
-            
-          </Form>
+        <div
+          id='login-row'
+          className='row justify-content-center align-items-center'
+        >
+          <div id='login-column' className='col-md-6'>
+            <div className='login-box col-md-12'>
+              <form id='login-form' className='form'>
+                <h3 className='text-center text-info'>Login</h3>
+                <div className='form-group'>
+                  <label htmlFor='username' className='text-info'>
+                    Username:
+                  </label>
+                  <br />
+                  <input
+                    type='text'
+                    name='username'
+                    id='username'
+                    className='form-control'
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className='form-group'>
+                  <label htmlFor='password' className='text-info'>
+                    Password:
+                  </label>
+                  <br />
+                  <input
+                    type='text'
+                    name='password'
+                    id='password'
+                    className='form-control'
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className='form-group'>
+                  {/* <label htmlFor='remember-me' className='text-info'>
+                    <span>Remember me</span>&nbsp;
+                    <span>
+                      <input
+                        id='remember-me'
+                        name='remember-me'
+                        type='checkbox'
+                      />
+                    </span>
+                  </label> */}
+                  <br />
+                  <input
+                    type='submit'
+                    name='submit'
+                    className='btn btn-info btn-md'
+                    defaultValue='submit'
+                    onClick={handleChange}
+                  />
+                </div>
+                {/* <div id='register-link' className='text-right'>
+                  <a href='.#' className='text-info'>
+                    Register here
+                  </a>
+                </div> */}
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   )
 }
-
-export default LoginForm
+export default Login
