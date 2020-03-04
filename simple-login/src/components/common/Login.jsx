@@ -5,6 +5,11 @@ import { useState } from 'react'
 const Login = () => {
   const [login, setLogin] = useState({});
 
+
+  const handleSubmit = (e) =>{
+    console.log(login)
+  }
+
   const handleChange = (event) => {
     event.preventDefault();
     setLogin({
@@ -71,7 +76,7 @@ const Login = () => {
                     name='submit'
                     className='btn btn-info btn-md'
                     defaultValue='submit'
-                    onClick={handleChange}
+                    onClick={handleSubmit}
                   />
                 </div>
                 {/* <div id='register-link' className='text-right'>
