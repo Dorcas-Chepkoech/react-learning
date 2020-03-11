@@ -1,0 +1,12 @@
+ [
+     {
+         "name":"Dorcas",
+         "age": 24,
+         "height":148
+     },
+     {
+        "name":"Atem",
+        "age": 18,
+        "height":170
+     }
+ ]

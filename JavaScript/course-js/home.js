@@ -132,4 +132,62 @@ let whatever = names.concat(cities);
 console.log(whatever);
 console.log(whatever.slice(1,4));
 console.log(whatever.reverse());
- 
+console.log(whatever.sort());
+
+let randomNumbers = [23,5,68,10,85,21,77,1,5,4,63];
+console.log(randomNumbers.sort(function(a,b){
+    return b-a;//sorts in descending order
+}));
+//aadding items to an array
+let emptyArray = new Array();
+for (let num = 0; num <10; num++){
+    emptyArray.push(num);
+}
+console.log(emptyArray);
+
+//OBJECTS IN JAVASCRIPT called dictionaries in python
+let color = {
+    name: 'red',
+    code: 5888
+}
+
+let person = {
+    name: 'Vanessa',
+    city: 'Frankfurt',
+    age:25,
+    height: 148,
+    personInfo: function(){
+        return this.name + this.city;
+    }
+};
+//changing value
+// person.name = 'Atem';
+// console.log(person.name);
+// console.log(person.personInfo);
+
+
+//conditionals, control flows(if else)
+//&& AND
+//|| OR
+
+let age = 68;
+if ((age>= 18) && (age<=35)){
+    status = 'drunks';
+    console.log(status)
+} else{
+    status = 'go home'
+    console.log(status)
+}
+
+//switch statements
+//diff btn weekday vs weekend
+switch (6){
+    case 0:
+        text= 'weekend';
+        case 5:
+            text: 'weekend';
+            case 6:
+                text:'weekend';
+                default:
+                    text = 'weekday';
+}
